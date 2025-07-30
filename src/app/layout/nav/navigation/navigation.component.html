@@ -1,0 +1,81 @@
+<div class="deznav" (mouseover)='hoverAdd(true)' (mouseout)="hoverAdd(false)">
+    <div class="deznav-scroll">
+        <ul class="metismenu" id="menu">
+            <li *ngFor="let item of sidebarMenu" [ngClass]="{'mm-active': item.title == activeMenu}">
+                <a 
+                    *ngIf="!item.route"
+                    (click)="handleMenu(item.title)"
+                    [ngClass]="{'has-arrow ai-icon': item.subMenu}" 
+                    href="javascript:void(0)" 
+                    aria-expanded="false"
+                >
+                    <i class="{{ item.icon }}"></i>
+                    <span class="nav-text ms-1 me-1">{{ item.title }}</span>
+                    <span *ngIf="item.badge" class="badge badge-xs style-1 badge-danger">New</span>
+                </a>
+                <a 
+                    *ngIf="item.route"
+                    (click)="handleMenu(item.title)"
+                    [ngClass]="{'has-arrow ai-icon': item.subMenu}" 
+                    [routerLink]="[item.route]"
+                    aria-expanded="false"
+                >
+                    <i class="{{ item.icon }}"></i>
+                    <span class="nav-text ms-1">{{ item.title }}</span>
+                    <span *ngIf="item.badge" class="badge badge-xs style-1 badge-danger">New</span>
+                </a>
+                <ul *ngIf="item.subMenu" aria-expanded="false" class="{{item.title == activeMenu ? 'mm-collapse mm-show': 'mm-collapse'}}">
+                    <li *ngFor="let subitem of item?.subMenu" [ngClass]="{'mm-active': subitem.title == activeSubMenu}">
+                        <a 
+                            *ngIf="subitem.route && !subitem.theme"
+                            (click)="handleActiveMenu(subitem.route)" 
+                            [routerLink]="[subitem.route]"
+                            [ngClass]="{'mm-active': subitem.title == activeSubMenu}"
+                        >
+                            {{subitem.title}}
+                            <span *ngIf="subitem.subBadge" class="badge badge-xs style-1 badge-danger">New</span>
+                        </a>
+                        <a 
+                            *ngIf="!subitem.route && !subitem.theme"
+                            class="has-arrow ai-icon"
+                            [ngClass]="{'mm-active': subitem.title == activeSubMenu}" 
+                            (click)="handleActiveSubMenu(subitem.title)" 
+                            href="javascript:void(0)"
+                            aria-expanded="false"
+                        >
+                            {{subitem.title}}
+                            <span *ngIf="subitem.subBadge" class="badge badge-xs style-1 badge-danger">New</span>
+                        </a>
+                        <a 
+                            *ngIf="subitem.route && subitem.theme"
+                            [ngClass]="{'mm-active': subitem.theme == elementValue}" 
+                            (click)="themeMode(subitem.theme)" 
+                            [routerLink]="[subitem.route]"
+                        >
+                            {{subitem.title}}
+                        </a>
+                        <ul *ngIf="subitem.subsubMenu" aria-expanded="false" class="{{subitem.title == activeSubMenu ? 'mm-collapse mm-show': 'mm-collapse'}}">
+                            <li *ngFor="let subSubItem of subitem.subsubMenu" >
+                                <a 
+                                    (click)="handleActiveMenu(subSubItem.route)" 
+                                    [routerLink]="[subSubItem.route]"
+                                    [ngClass]="{'mm-active': subSubItem.title == activeSubSubMenu}"
+                                >
+                                    {{subSubItem.title}}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="copyright">
+            <p><strong>Mophy Payment Admin Dashboard</strong> © <span class="current-year"> 2024 </span> All Rights Reserved</p>
+            <!-- <p>Made with <span class="heart"></span> by DexignZone</p> -->
+            <p class="fs-12">Made with 
+                <span class="heart" [class.heart-blast] = "isVisited == true" (click) = "checkVisited()" ></span>
+                 by DexignZone
+            </p>
+        </div>
+    </div>
+</div>

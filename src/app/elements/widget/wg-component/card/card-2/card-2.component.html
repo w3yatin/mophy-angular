@@ -1,0 +1,22 @@
+<div *ngFor="let item of cardList_2" class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+    <div class="widget-stat card bg-{{ item.color}}">
+        <div class="card-body  p-4">
+            <div class="media">
+                <span class="me-3">
+                    <i class="{{ item.icone }}"></i>
+                </span>
+                <div class="media-body text-white">
+                    <p class="mb-1 text-white">{{ item.title }}</p>
+                    <h3 class="text-white">{{ item.rank }}</h3>
+                    <div class="progress mb-2 bg-secondary">
+                        <div *ngIf="item.progress_bar == '80'" class="progress-bar progress-animated bg-white" style="width: 80%"></div>
+                        <div *ngIf="item.progress_bar == '50'" class="progress-bar progress-animated bg-white" style="width: 50%"></div>
+                        <div *ngIf="item.progress_bar == '76'" class="progress-bar progress-animated bg-white" style="width: 76%"></div>
+                        <div *ngIf="item.progress_bar == '30'" class="progress-bar progress-animated bg-white" style="width: 30%"></div>
+                    </div>
+                    <small>{{ item.increase }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="card-header d-sm-flex d-block border-0 pb-0">
+    <div class="pr-3 mb-sm-0 mb-3 me-auto">
+        <h4 class="fs-20 text-black mb-1">Quick Transfer</h4>
+        <span class="fs-12">Lorem ipsum dolor sit amet, consectetur</span>
+    </div>
+    <span class="fs-24 text-black font-w600">$56,772.38</span>
+</div>
+<div class="card-body testimonial-one">
+
+    <owl-carousel-o [options]="customOptions" class="mb-5 pb-2">
+        <ng-template carouselSlide *ngFor="let row of carousel_item">
+            <div class="image-bx mb-2">
+                <img src="{{ row.img }}" alt="">
+                <i class="las la-check-circle"></i>
+            </div>
+            <h6 class="fs-16 mb-0 mt-3">
+                <a routerLink="/admin/transactions-details" class="text-black">{{ row.name }}</a>
+            </h6>
+            <span class="fs-12">{{ row.user_id }}</span>
+        </ng-template>
+    </owl-carousel-o>
+
+    <form>
+        <div class="form-group mb-0 mt-5 row style-1 align-items-center">
+            <div class="col-sm-3">
+                <label class="fs-18 text-black font-w500">Amount</label>
+            </div>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <input type="number" class="form-control">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary rounded" type="button">TRANSFER NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

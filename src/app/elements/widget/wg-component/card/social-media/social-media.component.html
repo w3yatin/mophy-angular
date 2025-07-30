@@ -1,0 +1,21 @@
+<div *ngFor="let item of dataList" class="col-xl-3 col-xxl-3 col-sm-6">
+    <div class="card">
+        <div class="social-graph-wrapper {{ item.color }}">
+            <span class="s-icon"><i class="{{ item.icon }}"></i></span>
+        </div>
+        <div class="row">
+            <div class="col-6 border-end">
+                <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                    <h4 class="m-1"><span class="counter">{{ item.friends }}</span> k</h4>
+                    <p class="m-0">Friends</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                    <h4 class="m-1"><span class="counter">{{ item.followers }}</span> k</h4>
+                    <p class="m-0">Followers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

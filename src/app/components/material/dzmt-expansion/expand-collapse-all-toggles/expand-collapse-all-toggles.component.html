@@ -1,0 +1,67 @@
+<div class="example-action-buttons mb-3 ">
+    <button mat-raised-button color="primary" class="me-4 rounded-2" (click)="accordion.openAll()">Expand All</button>
+    <button mat-stroked-button color="primary" class="rounded-2" (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  <mat-accordion class="example-headers-align custom-expansion" multi>
+    <mat-expansion-panel class="top-radius">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+          <mat-icon class="float-end">account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="row">
+          <div class="col-sm-6">
+          <mat-form-field class="w-100">
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+          <mat-form-field class="w-100">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" min="1">
+          </mat-form-field>
+          </div>
+      </div>
+  
+    </mat-expansion-panel>
+    <mat-expansion-panel disabled>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Destination
+        </mat-panel-title>
+        <mat-panel-description>
+          Type the country name
+          <mat-icon class="float-end">map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field class="w-100">
+        <mat-label>Country</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel  class="bottom-radius">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Day of the trip
+        </mat-panel-title>
+        <mat-panel-description>
+          Inform the date you wish to travel
+          <mat-icon class="float-end">date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field class="w-100">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+      </mat-form-field>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-expansion-panel>
+  </mat-accordion>
+  

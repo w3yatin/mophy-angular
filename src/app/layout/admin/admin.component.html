@@ -1,0 +1,13 @@
+<div id="main-wrapper" [ngClass]="{'menu-toggle':toggleVal, 'show':true}" [class.iconhover-toggle]="mouseOvered">
+
+    <!-- <app-loading></app-loading> -->
+
+    <app-nav-header (sidebarToggle)=sidebarToggle($event)></app-nav-header>
+    <app-header></app-header>
+    <app-navigation (mouseHoverEvent)="iconHoverToggle($event)" ></app-navigation>
+
+    <router-outlet></router-outlet>
+
+    <app-footer></app-footer>
+</div>
+<app-switcher></app-switcher>

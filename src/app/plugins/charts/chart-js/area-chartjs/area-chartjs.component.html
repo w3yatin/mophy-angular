@@ -1,0 +1,46 @@
+<div class="content-body default-height">
+    <div class="container-fluid default-apex-cl">
+         <!-- Conten Head -->
+
+         <app-breadcrumb [head_title]="contantHead"></app-breadcrumb>
+        
+         <!-- End Conten Head -->
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-6 col-xxl-12">
+                <div class="card">
+                    <div class="card-header d-block">
+                        <h4 class="card-title">Line Chart Draw Time</h4>
+                    </div>
+                    <div class="card-body">
+                        
+                        <app-line-draw-time-chart class="custom-chart"></app-line-draw-time-chart>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-xxl-12">
+                <div class="card">
+                    <div class="card-header d-block">
+                        <h4 class="card-title">Line Chart Stacked</h4>
+                    </div>
+                    <div class="card-body">
+                        <app-line-stacked-chart class="custom-chart"></app-line-stacked-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-xxl-12">
+                <div class="card">
+                    <div class="card-header d-block">
+                        <h4 class="card-title">Line Chart Datasets</h4>
+                    </div>
+                    <div class="card-body">
+                        
+                        <app-line-datasets-chart class="custom-chart"></app-line-datasets-chart>
+                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>

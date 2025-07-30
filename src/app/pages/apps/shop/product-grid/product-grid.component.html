@@ -1,0 +1,32 @@
+<div class="content-body default-height">
+    <div class="container-fluid">
+        <!-- Conten Head -->
+
+        <app-breadcrumb [head_title]="contantHead"></app-breadcrumb>
+        
+        <!-- End Conten Head -->
+        <div class="row">
+            <div *ngFor="let item of productGrid" class="col-xl-2 col-xxl-3 col-md-4 col-sm-6">
+                <div class="card">
+                    <div class="card-body product-grid-card">
+                        <div class="new-arrival-product">
+                            <div class="new-arrivals-img-contnent rounded">
+                                <img class="img-fluid" src="{{ item.img }}" alt="">
+                            </div>
+                            <div class="new-arrival-content text-center mt-3">
+                                <h4>{{ item.title }}</h4>
+                                <ul class="star-rating">
+                                    <li *ngFor="let icon of item.ratings_class">
+                                        <i class="{{ icon.icon_class }} me-1"></i>
+                                    </li>
+                                </ul>
+                                <del class="discount me-2">{{ item.discount  | currency:'USD' }} </del>
+                                <span class="price ms-1">{{ item.price  | currency:'USD' }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

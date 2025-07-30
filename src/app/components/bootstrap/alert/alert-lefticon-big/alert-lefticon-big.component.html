@@ -1,0 +1,16 @@
+
+<div class="row">
+    <div class="col-xl-6" *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (closed)="close(alert)" class="left-icon-big"> 
+            <div class="media">
+                <div class="alert-left-icon-big">
+                    <span><i class="{{ alert.iconUrl }}"></i></span>
+                </div>
+                <div class="media-body">
+                    <h5 class="mt-1 mb-2">{{ alert.typeMsg }}</h5>
+                    <p class="mb-0">{{ alert.message }}</p>
+                </div>
+            </div>
+        </ngb-alert>
+    </div>
+</div>

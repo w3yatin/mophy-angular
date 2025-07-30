@@ -1,0 +1,18 @@
+
+    <div *ngFor="let item of cardList_1" class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="widget-stat card">
+            <div class="card-body p-4">
+                <div class="media ai-icon">
+                    <span class="me-3 bgl-{{item.color}} text-{{item.color}}">
+                        <!-- <i class="ti-user"></i> -->
+                        <span style="line-height: .8" [innerHTML]="item.svg"></span>
+                    </span>
+                    <div class="media-body">
+                        <p class="mb-1">{{ item.title }}</p>
+                        <h4 class="mb-0 me-1">{{ item.rank }}</h4>
+                        <span class="badge badge-{{item.color}}">{{ item.badge }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

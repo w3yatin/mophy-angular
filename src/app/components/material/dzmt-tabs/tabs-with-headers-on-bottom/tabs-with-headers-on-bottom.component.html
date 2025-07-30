@@ -1,0 +1,24 @@
+<mat-form-field class="w-100">
+  <mat-label>Selected tab index</mat-label>
+  <input matInput type="number" [formControl]="selected">
+</mat-form-field>
+
+<div>
+  <button mat-raised-button class="example-add-tab-button runded-2" (click)="addTab(selectAfterAdding.checked)">
+    Add new tab
+  </button>
+  <mat-checkbox #selectAfterAdding> Select tab after adding </mat-checkbox>
+</div>
+
+<mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)" class="mt-2">
+  <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+    
+    <div class="py-3">
+        Contents for {{tab}} tab
+      <button mat-raised-button class="example-delete-tab-button runded-2" [disabled]="tabs.length === 1"
+        (click)="removeTab(index)">
+        Delete Tab
+      </button>
+    </div>
+  </mat-tab>
+</mat-tab-group>

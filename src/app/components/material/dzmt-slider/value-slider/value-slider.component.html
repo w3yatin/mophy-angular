@@ -1,0 +1,15 @@
+<div class="stepping-slider"> 
+    <mat-slider 
+        class="example-margin w-100"
+        [disabled]="disabled"
+        [max]="max"
+        [min]="min"
+    >
+        <input matSliderStartThumb [(ngModel)]="value1" #slider1>
+        <input matSliderEndThumb [(ngModel)]="value2" #slider2>
+    </mat-slider>  
+    <div class="example-label-container">             
+        <label class="example-value-label">{{slider1.value}}.00  -  {{slider2.value}}.00 </label>
+    </div>                
+</div>
+

@@ -1,0 +1,28 @@
+<div class=" content-body default-height">
+    <div class="container-fluid">
+         <!-- Conten Head -->
+
+         <app-breadcrumb [head_title]="contantHead"></app-breadcrumb>
+         
+        <!-- End Conten Head -->
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <app-profile-card [item]="profile_details"></app-profile-card>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4">
+                 <!-- sid menu -->
+                 <app-profile-sid-menu></app-profile-sid-menu>
+                 <!-- end -->
+            </div>
+            <div class="col-xl-8">
+                <div class="card">
+                    <app-post-detail-content></app-post-detail-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

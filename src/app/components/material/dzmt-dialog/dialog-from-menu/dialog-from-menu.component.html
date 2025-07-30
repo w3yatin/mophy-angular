@@ -1,0 +1,4 @@
+<button mat-raised-button color="primary"  [matMenuTriggerFor]="menu" class="rounded-2" #menuTrigger>Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="openDialog()" class="rounded-2" >Open dialog</button>
+</mat-menu>
